@@ -30,6 +30,8 @@ template <class Result> struct JevProcessor {
 
 template <> class JevResponse<> {
   public:
+    [[nodiscard]] const std::string& payload() const { return m_payload; }
+
     template <class Process>
     [[nodiscard]] auto processor(
         std::string name,
